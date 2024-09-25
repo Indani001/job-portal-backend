@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 const nodemailer = require('nodemailer');
 const crypto = require('crypto');
+require('dotenv').config()
 
 // Email transporter (using nodemailer)
 const transporter = nodemailer.createTransport({
@@ -49,6 +50,7 @@ exports.signup = async (req, res) => {
 
     res.status(201).json({ message: 'User registered. Check your email to verify your account.' });
   } catch (err) {
+    console.log(err);
     res.status(500).json({ message: 'Something went wrong' });
   }
 };
