@@ -1,7 +1,5 @@
 # Node modules directory
 node_modules/
 
-# Environment variables
-.env
 
 .gitignore
